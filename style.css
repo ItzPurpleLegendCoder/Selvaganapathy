@@ -1,0 +1,114 @@
+/* Colours taken from Amma's lotus logo */
+:root {
+  --cream: #fff8ec;        /* inner circle of the logo: page background */
+  --cream-deep: #fbeedd;   /* cards and footer */
+  --lotus: #e2559b;        /* petal pink */
+  --lotus-deep: #b8286f;   /* headings and button */
+  --lotus-soft: #fbe1ee;
+  --flame: #e9a321;        /* lamp flame: small accents */
+  --text: #3b2a33;
+  --muted: #6f5a64;
+  --line: #efd9c6;
+  --radius: 14px;
+  --width: 720px;
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans", "Noto Sans Tamil",
+    "Latha", "Tamil Sangam MN", "Helvetica Neue", Arial, sans-serif;
+  font-size: 17px;
+  line-height: 1.65;
+}
+
+a { color: var(--lotus-deep); }
+a:hover { color: var(--lotus); }
+
+.wrap { max-width: var(--width); margin: 0 auto; padding: 0 16px; }
+
+/* Header on every page */
+.site-header {
+  border-bottom: 1px solid var(--line);
+  background: rgba(255, 248, 236, 0.92);
+}
+.site-header .wrap {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 6px 12px;
+  padding-top: 10px; padding-bottom: 10px;
+}
+.brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--text); }
+.brand img { width: 40px; height: 40px; }
+.brand span { font-weight: 600; letter-spacing: 0.01em; white-space: nowrap; }
+.site-header nav { display: flex; gap: 16px; }
+.site-header nav a { text-decoration: none; font-size: 15px; white-space: nowrap; }
+
+/* Home page */
+.hero { text-align: center; padding: 36px 0 12px; }
+.hero .logo { width: min(260px, 70vw); height: auto; display: block; margin: 0 auto 12px; }
+.hero h1 {
+  margin: 8px 0 0; color: var(--lotus-deep);
+  font-family: Georgia, "Times New Roman", serif; font-weight: 600;
+  font-size: clamp(30px, 7vw, 44px); line-height: 1.2;
+}
+.hero .tamil { margin: 4px 0 0; font-size: clamp(22px, 5.5vw, 30px); color: var(--lotus-deep); font-weight: 600; }
+.divider { width: 64px; height: 3px; background: var(--flame); border-radius: 2px; margin: 20px auto; opacity: 0.8; }
+.welcome { font-size: 18px; color: var(--muted); max-width: 34em; margin: 0 auto 28px; }
+
+.btn {
+  display: inline-block; background: var(--lotus-deep); color: #fff; text-decoration: none;
+  font-size: 20px; font-weight: 600; letter-spacing: 0.02em;
+  padding: 16px 44px; border-radius: 999px;
+  box-shadow: 0 6px 18px rgba(184, 40, 111, 0.25);
+  transition: background 0.2s, transform 0.2s;
+}
+.btn:hover, .btn:focus-visible { background: var(--lotus); color: #fff; transform: translateY(-1px); }
+.btn-small { font-size: 16px; padding: 10px 22px; box-shadow: none; }
+
+/* Offerings */
+section { padding: 28px 0; }
+h2 { color: var(--lotus-deep); font-family: Georgia, "Times New Roman", serif; font-weight: 600; font-size: 26px; margin: 0 0 14px; }
+h3 { margin: 0 0 4px; font-size: 18px; }
+.cards { display: grid; gap: 14px; }
+@media (min-width: 640px) { .cards { grid-template-columns: repeat(3, 1fr); } }
+.card {
+  background: #fff; border: 1px solid var(--line); border-top: 4px solid var(--lotus);
+  border-radius: var(--radius); padding: 18px;
+}
+.card p { margin: 6px 0; color: var(--muted); font-size: 15.5px; }
+.price { font-weight: 700; color: var(--text); font-size: 17px; }
+.note { font-size: 14.5px; color: var(--muted); text-align: center; margin-top: 14px; }
+
+/* Policy and contact pages */
+.page { padding: 28px 0 36px; }
+.page h1 { color: var(--lotus-deep); font-family: Georgia, "Times New Roman", serif; font-weight: 600; font-size: clamp(26px, 6vw, 34px); margin: 0 0 6px; line-height: 1.25; }
+.page .updated { color: var(--muted); font-size: 14.5px; margin: 0 0 22px; }
+.page h2 { font-size: 21px; margin: 28px 0 8px; }
+.page ul { padding-left: 1.2em; }
+.page li { margin: 4px 0; }
+
+.contact-list { list-style: none; padding: 0; margin: 0; }
+.contact-list li {
+  background: #fff; border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 14px 16px; margin: 0 0 10px;
+}
+.contact-list .label { display: block; font-size: 13px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); }
+.actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 8px; }
+
+/* Anything the owner must check */
+.tbc { background: #fff1b8; color: #6b4b00; padding: 0 4px; border-radius: 4px; font-weight: 600; }
+
+/* Footer on every page */
+.site-footer { margin-top: 24px; background: var(--cream-deep); border-top: 1px solid var(--line); font-size: 15px; color: var(--muted); }
+.site-footer .wrap { padding-top: 24px; padding-bottom: 28px; }
+.site-footer strong { color: var(--text); }
+.site-footer p { margin: 4px 0; }
+.site-footer .links { display: flex; flex-wrap: wrap; gap: 6px 18px; margin: 16px 0; padding: 14px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.site-footer .links a { text-decoration: none; }
+.site-footer .copy { font-size: 13.5px; margin-top: 12px; }
+
+a:focus-visible, .btn:focus-visible { outline: 3px solid var(--flame); outline-offset: 3px; }
