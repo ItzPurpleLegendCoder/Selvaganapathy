@@ -29,11 +29,18 @@
     <p class="welcome">Welcome. Annai Sagunthala shares the wisdom of Thirumanthiram and the Tamil spiritual tradition through talks, online courses and books.</p>
 
     <!-- ============================================================
-         DONATE NOW BUTTON LINK: CHANGE IT HERE, AND ONLY HERE.
-         Put your Razorpay DONATION Payment Page address between the
-         quotes after href= (for example https://pages.razorpay.com/...).
+         DONATE NOW: opens Razorpay on this page (see donate.js and
+         netlify/functions). If checkout is not set up, it falls back to
+         the Razorpay Payment Page in data-fallback below.
          ============================================================ -->
-    <a class="btn" href="https://pages.razorpay.com/pl_ThmhFTEA23hF5O/view">Donate Now</a>
+    <form id="donate-form" class="donate" data-fallback="https://pages.razorpay.com/pl_ThmhFTEA23hF5O/view">
+      <label for="donate-amount">Amount (₹)</label>
+      <div class="donate-row">
+        <input id="donate-amount" name="amount" type="number" inputmode="numeric" min="1" step="1" placeholder="Any amount" required>
+        <button id="donate-button" class="btn" type="submit">Donate Now</button>
+      </div>
+      <p id="donate-message" class="donate-message" role="status" aria-live="polite"></p>
+    </form>
     <p class="note">Payments are processed securely by Razorpay (UPI, cards, net banking).</p>
   </section>
 
@@ -76,5 +83,7 @@
     <p class="copy">© 2026 Selvaganapathy Charitable Trust. All rights reserved.</p>
   </div>
 </footer>
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script src="donate.js"></script>
 </body>
 </html>

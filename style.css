@@ -112,3 +112,15 @@ h3 { margin: 0 0 4px; font-size: 18px; }
 .site-footer .copy { font-size: 13.5px; margin-top: 12px; }
 
 a:focus-visible, .btn:focus-visible { outline: 3px solid var(--flame); outline-offset: 3px; }
+
+/* Donate form */
+.donate { max-width: 420px; margin: 0 auto; }
+.donate label { display: block; font-size: 15px; color: var(--muted); margin-bottom: 6px; }
+.donate-row { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+.donate input { flex: 1 1 140px; min-width: 0; font: inherit; font-size: 18px; padding: 12px 14px; border: 1px solid var(--line); border-radius: 999px; background: #fff; color: var(--text); text-align: center; }
+.donate input:focus-visible { outline: 3px solid var(--flame); outline-offset: 2px; }
+.donate .btn { border: 0; cursor: pointer; font-family: inherit; }
+.donate .btn:disabled { opacity: .7; cursor: wait; transform: none; }
+.donate-message { min-height: 1.4em; margin: 10px 0 0; font-size: 15px; }
+.donate-message.ok { color: #1f6b3a; }
+.donate-message.err { color: #a3262a; }
